@@ -29,6 +29,12 @@ class Match(models.Model):
 
     def __str__(self):
         return f"{self.home_team} vs {self.away_team} ({self.date}) {self.home_team_goals} : {self.away_team_goals}"
+    
+    def save(self, *args, **kwargs):
+        # Calculate goal counts before saving
+        self.home_team_goals = Event.objects.filter(match=self, event_type='GOAL', player__team=self.home_team).count()
+        self.away_team_goals = Event.objects.filter(match=self, event_type='GOAL', player__team=self.away_team).count()
+        super().save(*args, **kwargs)
 
 class Event(models.Model):
     MATCH_EVENT_CHOICES = (
