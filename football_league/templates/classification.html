@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Match Classifications</title>
+</head>
+<body>
+    <h1>Match Classifications</h1>
+    <ol>
+        {% for team, points in classificacao %}
+        <li>{{ team.name }} ({{ points }} points)</li>
+        {% endfor %}
+    </ol>
+</body>
+</html>
