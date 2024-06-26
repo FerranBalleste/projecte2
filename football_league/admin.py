@@ -9,6 +9,7 @@ class EventInline(admin.TabularInline):  # Use TabularInline for tabular view
 class MatchAdmin(admin.ModelAdmin):
     inlines = [EventInline]  # Add EventInline to inlines attribute
     readonly_fields = ["home_team_goals", "away_team_goals"]
+    search_fields = ["home_team","away_team"]
 
 # Register your models here.
 admin.site.register(League)
