@@ -23,7 +23,7 @@ admin.site.site_header = "Football League"
 admin.site.index_title = "Football League"
 
 urlpatterns = [
-    path("", football_views.index, name="index"),
+    path("", football_views.classifications, name="classifications"),
     path("football_league/", include("football_league.urls")),
     path('admin/', admin.site.urls),
 ]

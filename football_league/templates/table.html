@@ -1,28 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Matches and Results</title>
-</head>
-<body>
-    <h1>Matches and Results</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Visiting Team</th>
-                <th>Score</th>
-                <th>Host Team</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for match in matches %}
-            <tr>
-                <td>{{ match.away_team.name }} (x)</td>  # Visiting team with abbreviation
-                <td>{{ match.away_team_goals }} - {{ match.home_team_goals }}</td>  # Score display
-                <td>{{ match.home_team.name }} (y)</td>  # Host team with abbreviation
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content_block %}
+<h1>Matches and Results</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Visiting Team</th>
+            <th>Score</th>
+            <th>Host Team</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for match in matches %}
+        <tr>
+            <td>{{ match.away_team.name }} (x)</td>  # Visiting team with abbreviation
+            <td>{{ match.away_team_goals }} - {{ match.home_team_goals }}</td>  # Score display
+            <td>{{ match.home_team.name }} (y)</td>  # Host team with abbreviation
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matches and Results</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-identity">
+            <h1><a href="#">Football Match App</a></h1>
+        </div>  
+        <nav class="site-navigation">
+            <ul class="nav">
+            <li><a href="#">About</a></li> 
+            <li><a href="#">News</a></li> 
+            <li><a href="#">Contact</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <div>
+        {% block content_block %}{% endblock %}
+    </div>
+
+    <footer>Footer</footer>
+</body>
+</html>

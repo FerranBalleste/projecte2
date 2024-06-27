@@ -1,10 +1,10 @@
-{% load static %}
+{% extends 'base.html' %}
 
-<link rel="stylesheet" href="{% static 'style.css' %}">
-
+{% block content_block %}
 <h1>Match Classifications</h1>
 <ol>
     {% for team, points in classificacao %}
     <li>{{ team.name }} ({{ points }} points)</li>
     {% endfor %}
 </ol>
+{% endblock %}
