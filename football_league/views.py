@@ -5,7 +5,7 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    return HttpResponse("Hello, world. You're at Football Index.")
 
 def classifications(request):
     matches = Match.objects.all().select_related('home_team', 'away_team')  # Optimize query by selecting related teams
