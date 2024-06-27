@@ -33,3 +33,9 @@ def classifications(request):
 
     context = {'classificacao': classificacao}
     return render(request, 'classification.html', context)
+
+
+def table(request):
+    matches = Match.objects.all().select_related('home_team', 'away_team')
+    context = {'matches': matches}
+    return render(request, 'table.html', context)
